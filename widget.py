@@ -77,8 +77,14 @@ class Widget(QWidget):
         if self.ui.checkBox.isChecked():
             # Установка темной темы
             self.setStyleSheet(f"background-color: {dark}; color: #ffffff;")  # Фон - #292831, текст - белый
-            self.ui.textBrowser.setStyleSheet(f"background-color: {dark}; color: #ffffff;")  # Текст - белый
-            self.ui.comboBox.setStyleSheet(f"background-color: {dark}; color: #ffffff;")  # Текст - белый
+            self.ui.textBrowser.setStyleSheet(f"""
+                                QTextBrowser {{
+                                    border-radius: 10px; /* Закругление углов */
+                                    border: 2px solid {border}; /* Цвет границы */
+                                    background-color: {dark}; /* Фон */
+                                    color: #ffffff;
+                                }}""")
+            
             self.ui.pushButton.setStyleSheet(f"""
                 QPushButton {{
                     border-radius: 10px; /* Закругление углов */
@@ -114,7 +120,8 @@ class Widget(QWidget):
                     border: 2px solid {border};
                     border-radius: 10px;
                     padding: 5px;
-                    color: #000000;
+                    color: #ffffff;
+                    background-color: {dark};
                 }}
                 QComboBox:hover {{
                     background-color: {dark_background_aim}; /* Фон при наведении */
@@ -130,7 +137,8 @@ class Widget(QWidget):
                     border: 2px solid {border};
                     border-radius: 10px;
                     padding: 5px;
-                    color: #000000;
+                    color: #ffffff;
+                    background-color: {dark};
                 }}
                 QComboBox:hover {{
                     background-color: {dark_background_aim}; /* Фон при наведении */
@@ -172,8 +180,15 @@ class Widget(QWidget):
         else:
             # Установка светлой темы
             self.setStyleSheet(f"background-color: {light}; color: #000000;")  # Фон - #fad6ff, текст - черный
-            self.ui.textBrowser.setStyleSheet(f"background-color: {light}; color: #000000;")  # Текст - черный
-            self.ui.comboBox.setStyleSheet(f"background-color: {light}; color: #000000;")  # Текст - черный
+            
+            self.ui.textBrowser.setStyleSheet(f"""
+                                QTextBrowser {{
+                                    border-radius: 10px; /* Закругление углов */
+                                    border: 2px solid {border}; /* Цвет границы */
+                                    background-color: {light}; /* Фон */
+                                    color: #000000;
+                                }}""")
+            
             self.ui.pushButton.setStyleSheet(f"""
                 QPushButton {{
                     border-radius: 10px; /* Закругление углов */
@@ -210,12 +225,13 @@ class Widget(QWidget):
                     border-radius: 10px;
                     padding: 5px;
                     color: #000000;
+                    background-color: {light};
                 }}
                 QComboBox:hover {{
-                    background-color: {light_background_aim}; /* Фон при наведении */
+                    background-color: {dark_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
-                    image: url(images/str.png); /* Путь к вашему изображению */
+                    image: url(images/str_1.png); /* Путь к вашему изображению */
                     width: 20px; /* Ширина изображения */
                     height: 20px; /* Высота изображения */
                 }}
@@ -226,12 +242,13 @@ class Widget(QWidget):
                     border-radius: 10px;
                     padding: 5px;
                     color: #000000;
+                    background-color: {light};
                 }}
                 QComboBox:hover {{
-                    background-color: {light_background_aim}; /* Фон при наведении */
+                    background-color: {dark_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
-                    image: url(images/str.png); /* Путь к вашему изображению */
+                    image: url(images/str_1.png); /* Путь к вашему изображению */
                     width: 20px; /* Ширина изображения */
                     height: 20px; /* Высота изображения */
                 }}

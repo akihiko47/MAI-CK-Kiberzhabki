@@ -1,17 +1,15 @@
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-                            QMetaObject, QObject, QPoint, QRect,
-                            QSize, QTime, QUrl, Qt)
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
 from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-                           QFont, QFontDatabase, QGradient, QIcon,
-                           QImage, QKeySequence, QLinearGradient, QPainter,
-                           QPalette, QPixmap, QRadialGradient, QTransform)
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QHBoxLayout,
-                               QLabel, QPushButton, QSizePolicy, QSpacerItem,
-                               QTextBrowser, QVBoxLayout, QWidget)
-
+    QLabel, QPushButton, QSizePolicy, QSpacerItem,
+    QTextBrowser, QVBoxLayout, QWidget)
+from main_functions import *
 from color_settings import *
-
-
 class Ui_Widget(object):
     def setupUi(self, Widget):
         if not Widget.objectName():
@@ -53,7 +51,7 @@ class Ui_Widget(object):
                             border: 2px solid {border};
                             border-radius: 10px;
                             padding: 5px;
-                            color: #000000;
+                            color: #00000;
                         }}
                         QComboBox:hover {{
                             background-color: {light_background_aim}; /* Фон при наведении */
@@ -81,7 +79,7 @@ class Ui_Widget(object):
                             border: 2px solid {border};
                             border-radius: 10px;
                             padding: 5px;
-                            color: #000000;
+                            color: #00000;
                         }}
                         QComboBox:hover {{
                             background-color: {light_background_aim}; /* Фон при наведении */
@@ -92,6 +90,7 @@ class Ui_Widget(object):
                             height: 20px; /* Высота изображения */
                         }}""")
 
+
         self.horizontalLayout_4.addWidget(self.comboBox)
         self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.label_4 = QLabel(Widget)
@@ -101,7 +100,7 @@ class Ui_Widget(object):
         self.label_4.setLayoutDirection(Qt.LeftToRight)
         self.label_4.setTextFormat(Qt.PlainText)
         self.label_4.setPixmap(QPixmap("images/cat.png"))
-        self.label_4.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
+        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
         self.label_4.setTextInteractionFlags(Qt.NoTextInteraction)
         self.verticalLayout.addWidget(self.label_4)
         self.horizontalLayout_2 = QHBoxLayout()
@@ -138,11 +137,17 @@ class Ui_Widget(object):
 
         self.textBrowser = QTextBrowser(Widget)
         self.textBrowser.setObjectName(u"textBrowser")
-        self.textBrowser.setMinimumSize(500, 200)
+        self.textBrowser.setMinimumSize(500,200)
         font4 = QFont()
         font4.setPointSize(14)
         self.textBrowser.setFont(font4)
-        self.textBrowser.setStyleSheet(f"background-color:{light};")
+        self.textBrowser.setStyleSheet(f"""
+            QTextBrowser {{
+                border-radius: 10px; /* Закругление углов */
+                border: 2px solid {border}; /* Цвет границы */
+                background-color: {light}; /* Фон */
+                color: #000000;
+            }}""")
 
         self.verticalLayout.addWidget(self.textBrowser)
 
@@ -221,7 +226,6 @@ class Ui_Widget(object):
         self.retranslateUi(Widget)
 
         QMetaObject.connectSlotsByName(Widget)
-
     def retranslateUi(self, Widget):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Widget", None))
         self.label_2.setText(QCoreApplication.translate("Widget", u"Welcome to application", None))
@@ -239,3 +243,4 @@ class Ui_Widget(object):
         self.checkBox.setText(QCoreApplication.translate("Widget", "Светлая тема", None))
         self.pushButton.setText(QCoreApplication.translate("Widget", "Начать", None))
     # retranslateUi
+
