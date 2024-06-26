@@ -228,7 +228,7 @@ class Widget(QWidget):
                     background-color: {light};
                 }}
                 QComboBox:hover {{
-                    background-color: {dark_background_aim}; /* Фон при наведении */
+                    background-color: {light_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
                     image: url(images/str_1.png); /* Путь к вашему изображению */
@@ -245,7 +245,7 @@ class Widget(QWidget):
                     background-color: {light};
                 }}
                 QComboBox:hover {{
-                    background-color: {dark_background_aim}; /* Фон при наведении */
+                    background-color: {light_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
                     image: url(images/str_1.png); /* Путь к вашему изображению */
