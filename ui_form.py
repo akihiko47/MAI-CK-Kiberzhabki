@@ -51,7 +51,7 @@ class Ui_Widget(object):
                             border: 2px solid {border};
                             border-radius: 10px;
                             padding: 5px;
-                            color: #00000;
+                            color: #000000;
                         }}
                         QComboBox:hover {{
                             background-color: {light_background_aim}; /* Фон при наведении */
@@ -79,7 +79,7 @@ class Ui_Widget(object):
                             border: 2px solid {border};
                             border-radius: 10px;
                             padding: 5px;
-                            color: #00000;
+                            color: #000000;
                         }}
                         QComboBox:hover {{
                             background-color: {light_background_aim}; /* Фон при наведении */
@@ -193,11 +193,6 @@ class Ui_Widget(object):
         self.horizontalLayout.addItem(self.horizontalSpacer)
         self.pushButton = QPushButton(Widget)
         self.pushButton.setObjectName(u"pushButton")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
-        self.pushButton.setSizePolicy(sizePolicy)
         self.pushButton.setMinimumSize(QSize(173, 44))
         self.pushButton.setMaximumSize(QSize(173, 44))
         font6 = QFont()
