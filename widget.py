@@ -60,7 +60,8 @@ class Widget(QWidget):
 
             if file_format == ".txt":
                 self.ui.textBrowser.setPlainText(lines)
-            elif file_format == ".md":                self.ui.textBrowser.setMarkdown(lines)
+            elif file_format == ".md":
+                self.ui.textBrowser.setMarkdown(lines)
             elif file_format == ".html":
                 self.ui.textBrowser.setHtml(lines)
 

@@ -63,6 +63,9 @@ def add_hyperlinks_to_string(file_lines: str, file_format: str, user_format: str
         elif file_format == ".html":
             file_lines = file_lines.replace(email, f'<a href="mailto:{email_link}">{email}</a>')
 
+
+    # Заменяем все последовательности пробелов на один пробел:
+    file_lines = re.sub(r'\s{2,}', '\n', file_lines)
     return file_lines
 
 
