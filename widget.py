@@ -232,7 +232,7 @@ class Widget(QWidget):
                     background-color: {light_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
-                    image: url(images/str_1.png); /* Путь к вашему изображению */
+                    image: url(images/str.png); /* Путь к вашему изображению */
                     width: 20px; /* Ширина изображения */
                     height: 20px; /* Высота изображения */
                 }}
@@ -249,7 +249,7 @@ class Widget(QWidget):
                     background-color: {light_background_aim}; /* Фон при наведении */
                 }}
                 QComboBox::down-arrow {{
-                    image: url(images/str_1.png); /* Путь к вашему изображению */
+                    image: url(images/str.png); /* Путь к вашему изображению */
                     width: 20px; /* Ширина изображения */
                     height: 20px; /* Высота изображения */
                 }}
